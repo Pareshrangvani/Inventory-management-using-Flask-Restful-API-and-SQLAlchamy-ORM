@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inventory</title>
+</head>
+<body>
+<!-- #http://localhost:5000/item -->
+<form action="http://localhost:5000/upload_item" enctype="multipart/form-data" method="POST"> 
+   <input type="text" id = "name" placeholder = "name", name="name" /><br>
+   <input type="text" name="category" placeholder = "category"/><br>
+  EXPIRY: <input type="datetime-local" name="expiry_time" placeholder = "expiry date" /><br>
+  MFG: <input type="datetime-local" name="manufacturing_time" placeholder = "manufacturing_time" /><br>
+   <input type="int" name="quantity" placeholder = "quntity in numbers" /><br>
+   <input type="file" name="file" placeholder = "upload image photo" /><br>
+   <input type="submit" value="submit"/>
+</form>
+ 
+</body>
+</html>

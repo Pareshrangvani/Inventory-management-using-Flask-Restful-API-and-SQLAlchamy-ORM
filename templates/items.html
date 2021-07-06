@@ -1,0 +1,44 @@
+<!DOCTYPE html>  
+<html lang = "en">  
+   <head><title>Home</title></head>  
+   <body>    
+        
+      <hr/>  
+      {%- for message in get_flashed_messages() %}  
+         {{ message }}  
+      {%- endfor %}  
+          
+      <h3>Items List</h3>  
+      <table border="2" padding = "5">  
+         <thead>  
+            <tr>  
+               <th>Name</th>  
+               <th>Category</th>  
+               <th>Expiry</th>  
+               <th>MFG</th>
+               <th>Quantity</th>
+               <th>File</th>
+               <th>Img URL</th>
+                
+            </tr>  
+         </thead>  
+  
+         <tbody>  
+            {% for i in item_list %}
+                 
+               <tr>  
+                  <td>{{ i.name }}</td>  
+                  <td>{{ i.category }}</td>  
+                  <td>{{ i.expiry_time }}</td>  
+                  <td>{{ i.manufacturing_time }}</td>
+                  <td>{{ i.quantity }}</td>
+                  <td>{{ i.file }}</td> 
+                  <td>{{ url_for('static', filename = ('uploads/' + i.file)) }}</td>
+                    
+               </tr>  
+            {% endfor %}  
+         </tbody>  
+      </table>  
+      <br><br>  
+   </body>  
+</html>  
